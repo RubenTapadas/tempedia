@@ -9,7 +9,14 @@ import { map, take } from 'rxjs/operators';
 export class TemtemService {
   constructor(private http: HttpClient) {}
 
-  getAll$ = this.http.get(
-    'https://temtem-api.mael.tech/api/temtems?fields=name&types&number&icon&lumaIcon'
-  );
+  getAllTemtems() {
+    const filters = ['name', 'types', 'number', 'icon', 'lumaIcon'];
+    return this.http.get(
+      'https://temtem-api.mael.tech/api/temtems?fields=' + filters.join()
+    );
+  }
+
+  getAllTypes() {
+    return this.http.get('https://temtem-api.mael.tech/api/types');
+  }
 }

@@ -1,0 +1,27 @@
+.temtem-listing-item {
+  width: var(--temtem-item-size);
+  cursor: pointer;
+  height: var(--temtem-item-size);
+  padding: 1px;
+  box-shadow: var(--box-shadow-level-2);
+  border-radius: 2px;
+  background-size: cover;
+  background-color: var(--surface-color);
+  background-repeat: no-repeat;
+  transition-duration: 0.2s;
+  &:hover {
+    box-shadow: var(--box-shadow-level-3);
+  }
+}
+
+.temtem-listing-item-top {
+  height: auto;
+  width: 100%;
+}
+
+.temtem-listing-item-top-types > div {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

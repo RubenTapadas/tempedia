@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TemtemListingComponent } from './components/temtem-listing/temtem-listing.component';
 import { TemtemListingItemComponent } from './components/temtem-listing-item/temtem-listing-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TemtemOptionsComponent } from './components/temtem-options/temtem-options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemtemListingComponent,
-    TemtemListingItemComponent
+    TemtemListingItemComponent,
+    TemtemOptionsComponent
   ],
   imports: [
     BrowserModule,

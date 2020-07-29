@@ -1,2 +1,20 @@
+.main-container {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 300px auto;
+}
+
+.temtem-options {
+  width: 100%;
+  height: auto;
+  background-color: var(--surface-color);
+}
+
 .temtem-listing {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--temtem-item-size), 1fr)
+  );
 }

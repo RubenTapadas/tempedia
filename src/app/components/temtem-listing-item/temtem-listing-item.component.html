@@ -1,1 +1,17 @@
-<p>temtem-listing-item works!</p>
+<div
+  class="temtem-listing-item"
+  [style.backgroundImage]="
+    'url(https://temtem-api.mael.tech/' + info.icon + ')'
+  "
+>
+  <div class="temtem-listing-item-top">
+    <div class="temtem-listing-item-top-types">
+      <div
+        *ngFor="let type of info.types"
+        [style.backgroundImage]="
+          'url(https://temtem-api.mael.tech/' + findTypeIcon(type) + ')'
+        "
+      ></div>
+    </div>
+  </div>
+</div>

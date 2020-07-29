@@ -1,18 +1,25 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-temtem-listing-item',
   templateUrl: './temtem-listing-item.component.html',
   styleUrls: ['./temtem-listing-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TemtemListingItemComponent implements OnInit {
-
   @Input() info;
+  @Input() typeIcons;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  findTypeIcon(typeName: string): string {
+    return this.typeIcons.find((type) => type.name === typeName).icon;
   }
-
 }
