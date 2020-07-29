@@ -1,6 +1,20 @@
-<div></div>
 <div class="main-container">
-  <app-temtem-options class="temtem-options"></app-temtem-options>
+  <div class="temtem-options">
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ panelOpenState ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </div>
   <div class="temtem-listing">
     <app-temtem-listing-item
       *ngFor="let temtem of temtems$ | async"

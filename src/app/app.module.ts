@@ -6,21 +6,25 @@ import { AppComponent } from './app.component';
 import { TemtemListingComponent } from './components/temtem-listing/temtem-listing.component';
 import { TemtemListingItemComponent } from './components/temtem-listing-item/temtem-listing-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TemtemOptionsComponent } from './components/temtem-options/temtem-options.component';
+
+// Material
+import { BrowserAnimationsModule } from '@angular/platform browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemtemListingComponent,
     TemtemListingItemComponent,
-    TemtemOptionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
