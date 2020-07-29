@@ -1,0 +1,7 @@
+<div class="temtem-listing">
+  <app-temtem-listing-item
+    *ngFor="let temtem of temtems$ | async"
+    [info]="temtem"
+    class="temtem-listing-item"
+  ></app-temtem-listing-item>
+</div>
