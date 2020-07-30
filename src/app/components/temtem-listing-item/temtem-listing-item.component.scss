@@ -12,6 +12,7 @@
 .temtem-listing-item-top {
   width: 100%;
   display: grid;
+  justify-items: end;
   grid-template-columns: 30px auto;
 }
 
@@ -47,4 +48,29 @@
       box-shadow: var(--box-shadow-level-3);
     }
   }
+}
+
+.tetem-collector,
+.luma-hunter {
+  opacity: 0;
+  display: inline-block;
+  padding: 2px 4px 4px 5px;
+  margin-top: -2px;
+  box-shadow: var(--box-shadow-level-1);
+  margin-right: 5px;
+  border-radius: 0 0 5px 5px;
+  transition-duration: 0.2s;
+}
+
+.tetem-collector {
+  background-color: var(--temtem-collector-color);
+}
+
+.luma-hunter {
+  margin-right: -26px;
+  background-color: var(--luma-hunter-color);
+}
+
+.temtem-listing-item-top-checkboxes {
+  padding: 1px 0;
 }

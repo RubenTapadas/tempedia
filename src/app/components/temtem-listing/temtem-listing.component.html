@@ -78,7 +78,13 @@
       </div>
     </div>
   </div>
-  <div class="temtem-listing">
+  <div
+    class="temtem-listing"
+    [ngClass]="{
+      'tetem-collector': (customOptions$ | async).tetemCollector,
+      'luma-hunter': (customOptions$ | async).lumaHunter
+    }"
+  >
     <app-temtem-listing-item
       *ngFor="let temtem of temtems$ | async"
       [info]="temtem"
