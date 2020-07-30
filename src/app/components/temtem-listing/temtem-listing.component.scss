@@ -53,11 +53,35 @@
 
 .temtem-options-profile-text {
   display: grid;
+  padding: 2px 0;
   align-content: space-between;
-  input {
+
+  > input {
     width: 100%;
     font-size: 1.15em;
     margin-right: 10px;
+  }
+
+  > div > div {
+    color: var(--font-color-contrast);
+    cursor: pointer;
+    display: inline;
+    opacity: 0.3;
+    padding: 4px 6px;
+    font-size: 0.8em;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: var(--surface-color-contrast);
+    transition-duration: 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+      box-shadow: var(--box-shadow-level-1);
+    }
   }
 }
 

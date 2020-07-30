@@ -96,4 +96,12 @@ export class TemtemListingComponent implements OnInit {
       );
     });
   }
+
+  getUsername() {
+    return localStorage.getItem('username') ?? '';
+  }
+
+  changeUsername(username: string) {
+    localStorage.setItem('username', username);
+  }
 }

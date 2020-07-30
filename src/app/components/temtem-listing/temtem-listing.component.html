@@ -4,18 +4,23 @@
       <div class="temtem-options-profile">
         <div class="temtem-options-profile-image"></div>
         <div class="temtem-options-profile-text">
-          <div
-            [style.opacity]="(customOptions$ | async).tetemCollector ? 1 : 0.3"
-          >
-            Tetem Collector
-          </div>
-          <div [style.opacity]="(customOptions$ | async).lumaHunter ? 1 : 0.3">
-            Luma Hunter
-          </div>
           <input
             placeholder="Click to change Name"
-            (value)="('Click to change Name')"
+            [value]="getUsername()"
+            (keyup)="changeUsername($event.target.value)"
           />
+          <div>
+            <div [ngClass]="{ active: (customOptions$ | async).lumaHunter }">
+              Luma Hunter
+            </div>
+          </div>
+          <div>
+            <div
+              [ngClass]="{ active: (customOptions$ | async).tetemCollector }"
+            >
+              Tetem Collector
+            </div>
+          </div>
         </div>
       </div>
       <div>

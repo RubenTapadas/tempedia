@@ -8,6 +8,23 @@
 
 body {
   padding: 40px var(--website-margin);
+  position: relative;
   min-height: 100vh;
   background-color: var(--background-color);
+  overflow-x: hidden;
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(8px);
+    z-index: -2;
+    content: "";
+    position: fixed;
+    transform: scale(1.1);
+    background-size: cover;
+    background: var(--background-overlay-gradient),
+      url("https://sm.ign.com/ign_br/screenshot/default/temtem_8qrk.jpg");
+    background-repeat: no-repeat;
+  }
 }
