@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Material
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HttpClientModule,
     BrowserAnimationsModule,
     MatExpansionModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,11 +7,14 @@
 .temtem-options {
   top: 40px;
   width: 100%;
-  height: auto;
-  position: -webkit-sticky;
   position: sticky;
-  box-shadow: var(--box-shadow-level-2);
-  background-color: var(--surface-color);
+  position: -webkit-sticky;
+  & > div {
+    height: auto;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-level-2);
+    background-color: var(--surface-color);
+  }
 }
 
 .temtem-listing {
@@ -21,4 +24,49 @@
     auto-fill,
     minmax(var(--temtem-item-size), 1fr)
   );
+}
+
+.temtem-options-types {
+  display: grid;
+  padding-top: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+}
+
+.temtem-options-type {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-duration: 0.2s;
+}
+
+.temtem-options .temtem-options-profile {
+  display: grid;
+  padding: 10px;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+  border-radius: 50px 8px 8px 8px;
+  grid-template-columns: auto 1fr;
+}
+
+.temtem-options-profile-text {
+  display: grid;
+  align-content: space-between;
+  input {
+    width: 100%;
+    font-size: 1.15em;
+    margin-right: 10px;
+  }
+}
+
+.temtem-options-profile-image {
+  width: 80px;
+  height: 80px;
+  box-shadow: var(--box-shadow-level-1);
+  border-radius: 50% 8px 8px 8px;
+  background-size: cover;
+  background-image: url("https://assets.gamepur.com/wp-content/uploads/2020/03/17232647/Temtem-Platypet-850x560.jpg");
+  background-repeat: no-repeat;
 }
