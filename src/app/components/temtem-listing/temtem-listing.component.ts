@@ -50,6 +50,8 @@ export class TemtemListingComponent implements OnInit {
         this.temtems$.next(temtems as any);
       }
     );
+
+    this.customOptions$.next(JSON.parse(localStorage.getItem('customOptions')));
   }
 
   arrayShareValue(array1: any[], array2: any[]): boolean {
@@ -103,5 +105,16 @@ export class TemtemListingComponent implements OnInit {
 
   changeUsername(username: string) {
     localStorage.setItem('username', username);
+  }
+
+  customOptionsToggle(field: string) {
+    this.customOptions$.pipe(take(1)).subscribe((customOptions) => {
+      const newCustomOptions = {
+        ...customOptions,
+        [field]: !customOptions[field],
+      };
+      localStorage.setItem('customOptions', JSON.stringify(newCustomOptions));
+      this.customOptions$.next(newCustomOptions);
+    });
   }
 }

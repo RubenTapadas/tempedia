@@ -74,13 +74,16 @@
     background-color: var(--surface-color-contrast);
     transition-duration: 0.2s;
 
-    &:hover {
+    &.luma-hunter:hover,
+    &.luma-hunter.active {
+      background-color: var(--luma-hunter-color);
       opacity: 1;
     }
 
-    &.active {
+    &.temtem-collector:hover,
+    &.temtem-collector.active {
+      background-color: var(--temtem-collector-color);
       opacity: 1;
-      box-shadow: var(--box-shadow-level-1);
     }
   }
 }

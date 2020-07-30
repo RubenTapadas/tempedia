@@ -10,12 +10,18 @@
             (keyup)="changeUsername($event.target.value)"
           />
           <div>
-            <div [ngClass]="{ active: (customOptions$ | async).lumaHunter }">
+            <div
+              class="luma-hunter"
+              (click)="customOptionsToggle('lumaHunter')"
+              [ngClass]="{ active: (customOptions$ | async).lumaHunter }"
+            >
               Luma Hunter
             </div>
           </div>
           <div>
             <div
+              class="temtem-collector"
+              (click)="customOptionsToggle('tetemCollector')"
               [ngClass]="{ active: (customOptions$ | async).tetemCollector }"
             >
               Tetem Collector
