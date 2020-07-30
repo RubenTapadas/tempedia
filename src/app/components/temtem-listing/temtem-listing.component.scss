@@ -5,8 +5,11 @@
 }
 
 .temtem-options {
+  top: 40px;
   width: 100%;
   height: auto;
+  position: -webkit-sticky;
+  position: sticky;
   box-shadow: var(--box-shadow-level-2);
   background-color: var(--surface-color);
 }

@@ -1,17 +1,24 @@
-<div
-  class="temtem-listing-item"
-  [style.backgroundImage]="
-    'url(https://temtem-api.mael.tech/' + info.icon + ')'
-  "
->
-  <div class="temtem-listing-item-top">
-    <div class="temtem-listing-item-top-types">
-      <div
-        *ngFor="let type of typeIcons$ | async"
-        [style.backgroundImage]="
-          'url(https://temtem-api.mael.tech/' + type + ')'
-        "
-      ></div>
+<div class="temtem-listing-item-container">
+  <div>
+    <div
+      class="temtem-listing-item"
+      [style.backgroundImage]="
+        'url(https://temtem-api.mael.tech/' + info.icon + ')'
+      "
+    >
+      <div class="temtem-listing-item-top">
+        <div class="temtem-listing-item-top-types">
+          <div
+            *ngFor="let type of typeIcons$ | async"
+            [style.backgroundImage]="
+              'url(https://temtem-api.mael.tech/' + type + ')'
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="temtem-listing-item-bottom">
+      {{ "#" + info.number + " " + info.name }}
     </div>
   </div>
 </div>
