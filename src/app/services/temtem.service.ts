@@ -19,8 +19,4 @@ export class TemtemService {
       'https://temtem-api.mael.tech/api/temtems?fields=' + filters.join()
     );
   }
-
-  getAllTypes() {
-    return this.http.get('https://temtem-api.mael.tech/api/types');
-  }
 }
