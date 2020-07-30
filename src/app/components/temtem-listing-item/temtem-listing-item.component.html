@@ -7,9 +7,9 @@
   <div class="temtem-listing-item-top">
     <div class="temtem-listing-item-top-types">
       <div
-        *ngFor="let type of info.types"
+        *ngFor="let type of typeIcons$ | async"
         [style.backgroundImage]="
-          'url(https://temtem-api.mael.tech/' + findTypeIcon(type) + ')'
+          'url(https://temtem-api.mael.tech/' + type + ')'
         "
       ></div>
     </div>

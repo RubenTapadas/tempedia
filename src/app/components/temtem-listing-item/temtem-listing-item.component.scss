@@ -15,13 +15,16 @@
 }
 
 .temtem-listing-item-top {
-  height: auto;
   width: 100%;
+  display: grid;
+  grid-template-columns: 30px auto;
 }
 
 .temtem-listing-item-top-types > div {
   width: 30px;
   height: 30px;
+  display: grid;
   background-size: cover;
   background-repeat: no-repeat;
+  grid-template-rows: repeat(2, 30px);
 }

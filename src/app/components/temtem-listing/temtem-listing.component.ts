@@ -12,7 +12,6 @@ export class TemtemListingComponent implements OnInit {
   constructor(private temtemService: TemtemService) {}
 
   temtems$ = this.temtemService.getAllTemtems().pipe(shareReplay(1));
-  temtemTypes$ = this.temtemService.getAllTypes().pipe(shareReplay(1));
 
   ngOnInit(): void {}
 }

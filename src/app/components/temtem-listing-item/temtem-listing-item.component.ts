@@ -4,6 +4,9 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
+import { TemtemService } from 'src/app/services/temtem.service';
+import { take } from 'rxjs/operators';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-temtem-listing-item',
@@ -13,13 +16,21 @@ import {
 })
 export class TemtemListingItemComponent implements OnInit {
   @Input() info;
-  @Input() typeIcons;
+  typeIcons$ = new BehaviorSubject([]);
 
-  constructor() {}
+  constructor(private temtemService: TemtemService) {}
 
-  ngOnInit(): void {}
-
-  findTypeIcon(typeName: string): string {
-    return this.typeIcons.find((type) => type.name === typeName).icon;
+  ngOnInit(): void {
+    this.temtemService.getAllTypes$.pipe(take(1)).subscribe((types) => {
+      this.typeIcons$.next(
+        (types as any)
+          .filter((type) => {
+            return this.info.types.includes(type.name);
+          })
+          .map((type) => type.icon)
+      );
+    });
   }
 }
+
+//this.typeIcons = types.filter((type) => type.name === typeName).icon
