@@ -1,0 +1,26 @@
+.temtem-info-profile {
+  width: calc(100vw - 200px);
+  height: calc(100vh - 200px);
+  background-color: var(--surface-color);
+}
+
+.temtem-info-profile-main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.temtem-info-profile-main-images {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: auto auto;
+}
+
+.temtem-info-render {
+  width: 160px;
+  height: 190px;
+  border-radius: 3px;
+  background-size: contain;
+  background-color: var(--surface-color);
+  background-repeat: no-repeat;
+  background-position: center;
+}

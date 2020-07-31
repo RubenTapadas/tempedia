@@ -13,12 +13,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TemtemProfileComponent } from './components/temtem-profile/temtem-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemtemListingComponent,
     TemtemListingItemComponent,
+    TemtemProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,7 +17,7 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 export class TemtemListingComponent implements OnInit {
   constructor(
     private ref: ChangeDetectorRef,
-    private temtemService: TemtemService
+    public temtemService: TemtemService
   ) {}
 
   temtemsUnfiltered$ = this.temtemService.getAllTemtems().pipe(shareReplay(1));

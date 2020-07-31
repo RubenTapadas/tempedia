@@ -8,6 +8,8 @@ import {
 import { TemtemService } from 'src/app/services/temtem.service';
 import { take } from 'rxjs/operators';
 import { Subject, BehaviorSubject } from 'rxjs';
+import { TemtemProfileComponent } from '../temtem-profile/temtem-profile.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-temtem-listing-item',
@@ -28,7 +30,8 @@ export class TemtemListingItemComponent implements OnInit {
 
   constructor(
     private ref: ChangeDetectorRef,
-    private temtemService: TemtemService
+    private temtemService: TemtemService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -109,6 +112,10 @@ export class TemtemListingItemComponent implements OnInit {
     localStorage.setItem('caught', JSON.stringify({ ...caught, lumas }));
     this.caught$.next({ ...caught, lumas });
   }
-}
 
-//this.typeIcons = types.filter((type) => type.name === typeName).icon
+  openTemtem(temtemNumber) {
+    this.dialog.open(TemtemProfileComponent, {
+      data: { temtemNumber },
+    });
+  }
+}

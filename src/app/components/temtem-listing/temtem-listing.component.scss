@@ -107,6 +107,12 @@
   background-repeat: no-repeat;
 }
 
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
 @media only screen and (max-width: 750px) {
   .main-container {
     grid-template-columns: auto;

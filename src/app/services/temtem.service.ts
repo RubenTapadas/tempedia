@@ -19,4 +19,10 @@ export class TemtemService {
       'https://temtem-api.mael.tech/api/temtems?fields=' + filters.join()
     );
   }
+
+  getTemtem(temtemNumber) {
+    return this.http.get(
+      'https://temtem-api.mael.tech/api/temtems/' + temtemNumber
+    );
+  }
 }

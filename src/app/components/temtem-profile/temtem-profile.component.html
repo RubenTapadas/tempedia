@@ -1,0 +1,15 @@
+<div class="temtem-info-profile" *ngIf="temtem$ | async; let temtem">
+  <div class="temtem-info-profile-main">
+    <div class="temtem-info-profile-main-images">
+      <div
+        [style.backgroundImage]="'url(' + temtem.wikiRenderStaticUrl + ')'"
+        class="temtem-info-render"
+      ></div>
+      <div
+        [style.backgroundImage]="'url(' + temtem.wikiRenderStaticLumaUrl + ')'"
+        class="temtem-info-render"
+      ></div>
+    </div>
+    <div class="temtem-info-profile-main-info"></div>
+  </div>
+</div>

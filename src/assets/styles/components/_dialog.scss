@@ -1,0 +1,21 @@
+.cdk-global-overlay-wrapper .cdk-overlay-pane {
+  max-width: calc(100vw - 100px) !important;
+}
+
+.mat-dialog-container {
+  z-index: -1;
+  position: relative;
+
+  > * {
+    z-index: -1;
+    position: relative;
+
+    > div:first-of-type {
+      z-index: -1;
+      padding: 30px 20px;
+      position: relative;
+      border-radius: 4px;
+      box-shadow: var(--box-shadow-level-3);
+    }
+  }
+}
