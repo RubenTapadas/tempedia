@@ -1,0 +1,17 @@
+mat-expansion-panel {
+  border-radius: 4px;
+  box-shadow: none !important;
+
+  .mat-expansion-panel-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  span {
+    color: #888888;
+  }
+}
