@@ -8,7 +8,16 @@
   <div>
     <div class="temtem-options">
       <div class="temtem-options-profile">
-        <div class="temtem-options-profile-image"></div>
+        <div
+          class="temtem-options-profile-image"
+          [ngStyle]="{
+            'background-image':
+              (profileImage$ | async)
+                ? 'url(' + (profileImage$ | async) + ')'
+                : '',
+            'background-position': (profileImage$ | async) ? 'center' : ''
+          }"
+        ></div>
         <div class="temtem-options-profile-text">
           <input
             placeholder="Click to change Name"
@@ -50,14 +59,14 @@
               (input)="changeFilter('number', $event.target.value)"
             >
               <mat-label>Number</mat-label>
-              <input matInput placeholder="Placeholder" />
+              <input matInput placeholder="Number" />
             </mat-form-field>
             <mat-form-field
               appearance="legacy"
               (input)="changeFilter('name', $event.target.value)"
             >
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Placeholder" />
+              <input matInput placeholder="Name" />
             </mat-form-field>
             <span>Types</span>
             <div class="temtem-options-types">
@@ -79,6 +88,17 @@
               </mat-panel-title>
               <mat-panel-description> </mat-panel-description>
             </mat-expansion-panel-header>
+            <mat-form-field
+              appearance="legacy"
+              (change)="changeImage($event.target.value)"
+            >
+              <mat-label>Profile Image (url)</mat-label>
+              <input
+                matInput
+                placeholder="Profile Image (url)"
+                [value]="profileImage$ | async"
+              />
+            </mat-form-field>
           </mat-expansion-panel>
         </mat-accordion>
       </div>

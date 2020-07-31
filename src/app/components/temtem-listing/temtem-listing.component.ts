@@ -35,6 +35,8 @@ export class TemtemListingComponent implements OnInit {
     lumaHunter: false,
   });
 
+  profileImage$ = new BehaviorSubject('');
+
   ngOnInit(): void {
     combineLatest(this.temtemsUnfiltered$, this.filters$).subscribe(
       ([temtemsUnfiltered, filters]) => {
@@ -52,9 +54,13 @@ export class TemtemListingComponent implements OnInit {
     );
 
     const customOptions = JSON.parse(localStorage.getItem('customOptions'));
-
     if (customOptions) {
       this.customOptions$.next(customOptions);
+    }
+
+    const profileImage = localStorage.getItem('profileImage');
+    if (profileImage) {
+      this.profileImage$.next(profileImage);
     }
   }
 
@@ -120,5 +126,10 @@ export class TemtemListingComponent implements OnInit {
       localStorage.setItem('customOptions', JSON.stringify(newCustomOptions));
       this.customOptions$.next(newCustomOptions);
     });
+  }
+
+  changeImage(imageUrl) {
+    this.profileImage$.next(imageUrl);
+    localStorage.setItem('profileImage', imageUrl);
   }
 }
