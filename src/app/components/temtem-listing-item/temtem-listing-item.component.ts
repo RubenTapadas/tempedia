@@ -48,10 +48,10 @@ export class TemtemListingItemComponent implements OnInit {
       this.caught$.next(caught);
     }
 
-    if (caught.temtems) {
+    if (caught?.temtems) {
       this.isCaught$.next(caught.temtems.includes(this.info.number));
     }
-    if (caught.lumas) {
+    if (caught?.lumas) {
       this.isLuma$.next(caught.lumas.includes(this.info.number));
     }
   }
