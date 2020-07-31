@@ -20,6 +20,7 @@
 .temtem-listing {
   display: grid;
   grid-gap: 20px;
+  justify-items: center;
   grid-template-columns: repeat(
     auto-fill,
     minmax(var(--temtem-item-size), 1fr)
@@ -104,4 +105,10 @@
   background-size: cover;
   background-image: url("https://assets.gamepur.com/wp-content/uploads/2020/03/17232647/Temtem-Platypet-850x560.jpg");
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 750px) {
+  .main-container {
+    grid-template-columns: auto;
+  }
 }

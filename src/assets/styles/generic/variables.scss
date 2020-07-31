@@ -32,3 +32,15 @@
 
   --website-margin: 120px;
 }
+
+@media only screen and (max-width: 1300px) {
+  :root {
+    --website-margin: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --website-margin: 10px;
+  }
+}
