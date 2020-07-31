@@ -35,3 +35,12 @@
     display: inherit;
   }
 }
+
+.main-container:not(.luma-hunter) {
+  .temtem-listing-item-temtem {
+    display: inherit;
+  }
+  .temtem-listing-item-luma {
+    display: none;
+  }
+}
