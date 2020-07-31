@@ -58,6 +58,7 @@
 
   > input {
     width: 100%;
+    border: 0;
     font-size: 1.15em;
     margin-right: 10px;
   }
@@ -74,13 +75,20 @@
     background-color: var(--surface-color-contrast);
     transition-duration: 0.2s;
 
-    &.luma-hunter:hover,
+    &.luma-hunter:hover {
+      opacity: 1;
+      background-color: var(--luma-hunter-faded-color);
+    }
+
     &.luma-hunter.active {
       opacity: 1;
       background-color: var(--luma-hunter-color);
     }
 
-    &.temtem-collector:hover,
+    &.temtem-collector:hover {
+      opacity: 1;
+      background-color: var(--temtem-collector-faded-color);
+    }
     &.temtem-collector.active {
       opacity: 1;
       background-color: var(--temtem-collector-color);

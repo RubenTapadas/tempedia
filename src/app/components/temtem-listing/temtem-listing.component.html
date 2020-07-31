@@ -112,7 +112,7 @@
     }"
   >
     <app-temtem-listing-item
-      *ngFor="let temtem of temtems$ | async"
+      *ngFor="let temtem of temtems$ | async; trackBy: trackByFn"
       [info]="temtem"
       class="temtem-listing-item"
     ></app-temtem-listing-item>

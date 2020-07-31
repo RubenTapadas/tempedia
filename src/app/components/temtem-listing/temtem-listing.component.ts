@@ -132,4 +132,8 @@ export class TemtemListingComponent implements OnInit {
     this.profileImage$.next(imageUrl);
     localStorage.setItem('profileImage', imageUrl);
   }
+
+  trackByFn(index, item) {
+    return item.someUniqueIdentifier;
+  }
 }

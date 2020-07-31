@@ -60,8 +60,8 @@
   grid-template-rows: repeat(auto, auto);
   & > div {
     width: var(--temtem-item-size);
-    border-radius: 3px;
     box-shadow: var(--box-shadow-level-2);
+    border-radius: 3px;
     transition-duration: 0.2s;
     &:hover {
       box-shadow: var(--box-shadow-level-3);
