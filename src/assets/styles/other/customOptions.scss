@@ -1,5 +1,6 @@
-.tetem-collector div.tetem-collector,
-.luma-hunter div.luma-hunter {
+.tetem-collector .temtem-listing-item-top-checkboxes div.tetem-collector,
+.luma-hunter .temtem-listing-item-top-checkboxes div.luma-hunter {
+  display: inline-block;
   opacity: 0.9;
 }
 
@@ -18,5 +19,23 @@
   .mat-checkbox-frame {
     opacity: 0.8;
     border-color: var(--surface-color);
+  }
+}
+
+.main-container.tetem-collector,
+.main-container.luma-hunter {
+  .temtem-listing-item-container:not(.caught-temtem):not(.caught-luma) {
+    .temtem-listing-item-temtem {
+      opacity: 0.3;
+    }
+  }
+}
+
+.temtem-listing-item-container.caught-luma {
+  .temtem-listing-item-temtem {
+    display: none;
+  }
+  .temtem-listing-item-luma {
+    display: inherit;
   }
 }

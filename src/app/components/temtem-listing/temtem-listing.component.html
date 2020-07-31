@@ -1,4 +1,10 @@
-<div class="main-container">
+<div
+  class="main-container"
+  [ngClass]="{
+    'luma-hunter': (customOptions$ | async).lumaHunter,
+    'tetem-collector': (customOptions$ | async).tetemCollector
+  }"
+>
   <div>
     <div class="temtem-options">
       <div class="temtem-options-profile">

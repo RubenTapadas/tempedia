@@ -51,7 +51,11 @@ export class TemtemListingComponent implements OnInit {
       }
     );
 
-    this.customOptions$.next(JSON.parse(localStorage.getItem('customOptions')));
+    const customOptions = JSON.parse(localStorage.getItem('customOptions'));
+
+    if (customOptions) {
+      this.customOptions$.next(customOptions);
+    }
   }
 
   arrayShareValue(array1: any[], array2: any[]): boolean {
