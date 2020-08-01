@@ -1,5 +1,6 @@
 <div
   class="temtem-listing-item-container"
+  *ngIf="info"
   [ngClass]="{
     'caught-luma': isLuma$ | async,
     'caught-temtem': isCaught$ | async

@@ -20,20 +20,20 @@
   }
 }
 
-.cdk-overlay-pane {
-  animation: to-top;
-  margin-bottom: 0vh;
+app-temtem-profile {
+  animation: to-bottom;
+  bottom: 0vh;
   animation-duration: 0.6s;
   animation-timing-function: ease-in-out;
 }
 
-@keyframes to-top {
+@keyframes to-bottom {
   0% {
     opacity: 0.5;
-    margin-bottom: -200vh;
+    bottom: 85vh;
   }
   100% {
     opacity: 1;
-    margin-bottom: 0vh;
+    bottom: 0vh;
   }
 }
