@@ -23,9 +23,9 @@
       <div class="temtem-listing-item-top">
         <div class="temtem-listing-item-top-types">
           <div
-            *ngFor="let type of typeIcons$ | async"
+            *ngFor="let type of info.types"
             [style.backgroundImage]="
-              'url(https://temtem-api.mael.tech/' + type + ')'
+              'url(https://temtem-api.mael.tech/' + type.icon + ')'
             "
           ></div>
         </div>

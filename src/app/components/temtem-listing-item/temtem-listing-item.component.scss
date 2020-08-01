@@ -58,6 +58,7 @@
 .temtem-listing-item-container {
   display: grid;
   grid-template-rows: repeat(auto, auto);
+
   & > div {
     width: var(--temtem-item-size);
     box-shadow: var(--box-shadow-level-2);

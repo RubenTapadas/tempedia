@@ -1,15 +1,139 @@
 <div class="temtem-info-profile" *ngIf="temtem$ | async; let temtem">
+  <h3>{{ "#" + temtem.number + " " + temtem.name }}</h3>
   <div class="temtem-info-profile-main">
     <div class="temtem-info-profile-main-images">
       <div
-        [style.backgroundImage]="'url(' + temtem.wikiRenderStaticUrl + ')'"
+        [style.backgroundImage]="
+          'url(https://temtem-api.mael.tech/' + temtem.icon + ')'
+        "
         class="temtem-info-render"
       ></div>
       <div
-        [style.backgroundImage]="'url(' + temtem.wikiRenderStaticLumaUrl + ')'"
+        [style.backgroundImage]="
+          'url(https://temtem-api.mael.tech/' + temtem.lumaIcon + ')'
+        "
         class="temtem-info-render"
       ></div>
     </div>
-    <div class="temtem-info-profile-main-info"></div>
+    <div class="temtem-info-profile-main-info">
+      <div>
+        <h5>Type(s)</h5>
+        <div
+          *ngFor="let type of temtem.types"
+          class="temtem-info-profile-main-info-type"
+        >
+          <div
+            [style.backgroundImage]="
+              'url(https://temtem-api.mael.tech' + type.icon + ')'
+            "
+            class="temtem-info-profile-main-info-type-icon"
+          ></div>
+          <span>{{ type.name }}</span>
+        </div>
+      </div>
+      <div>
+        <h5>Weak To (0.5)</h5>
+        <div
+          *ngFor="let type of weak$ | async"
+          class="temtem-info-profile-main-info-type"
+        >
+          <div
+            [style.backgroundImage]="
+              'url(https://temtem-api.mael.tech' + type.icon + ')'
+            "
+            class="temtem-info-profile-main-info-type-icon"
+          ></div>
+          <span>{{ type.name }}</span>
+        </div>
+      </div>
+      <div>
+        <h5>Resistant To (2)</h5>
+        <div
+          *ngFor="let type of resistant$ | async"
+          class="temtem-info-profile-main-info-type"
+        >
+          <div
+            [style.backgroundImage]="
+              'url(https://temtem-api.mael.tech' + type.icon + ')'
+            "
+            class="temtem-info-profile-main-info-type-icon"
+          ></div>
+          <span>{{ type.name }}</span>
+        </div>
+      </div>
+      <div class="temtem-info-profile-main-info-trais">
+        <h5>Traits</h5>
+        <div *ngFor="let trait of temtem.traits">
+          <div>{{ trait.name }}</div>
+          <span>{{ trait.description }}</span>
+        </div>
+      </div>
+      <div
+        *ngIf="temtem.gameDescription"
+        class="temtem-info-profile-main-info-description"
+      >
+        <h5>Game Description</h5>
+        {{ temtem.gameDescription }}
+      </div>
+    </div>
+  </div>
+  <div
+    class="temtem-info-profile-evo"
+    [ngClass]="'evolutions-' + (evolutions$ | async)?.length"
+  >
+    <div *ngIf="evolutions$ | async">
+      <div *ngFor="let evolution of evolutions$ | async">
+        <div class="temtem-listing-item-outer">
+          <div class="temtem-listing-item">
+            <div
+              class="temtem-listing-item-temtem"
+              [style.backgroundImage]="
+                'url(https://temtem-api.mael.tech/' + evolution.icon + ')'
+              "
+            ></div>
+            <div class="temtem-listing-item-top">
+              <div class="temtem-listing-item-top-types">
+                <div
+                  *ngFor="let type of evolution.types"
+                  [style.backgroundImage]="
+                    'url(https://temtem-api.mael.tech/' + type.icon + ')'
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="temtem-listing-item-bottom">
+            {{ "#" + evolution.number + " " + evolution.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!(evolutions$ | async)">
+      <div>
+        <div class="temtem-listing-item-outer">
+          <div class="temtem-listing-item">
+            <div
+              class="temtem-listing-item-temtem"
+              [style.backgroundImage]="
+                'url(https://temtem-api.mael.tech/' + temtem.icon + ')'
+              "
+            ></div>
+            <div class="temtem-listing-item-top">
+              <div class="temtem-listing-item-top-types">
+                <div
+                  *ngFor="let type of temtem.types"
+                  [style.backgroundImage]="
+                    'url(https://temtem-api.mael.tech/' + type.icon + ')'
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="temtem-listing-item-bottom">
+            {{ "#" + temtem.number + " " + temtem.name }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

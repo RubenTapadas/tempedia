@@ -16,13 +16,40 @@ export class TemtemService {
   getAllTemtems() {
     const filters = ['name', 'types', 'number', 'icon', 'lumaIcon'];
     return this.http.get(
-      'https://temtem-api.mael.tech/api/temtems?fields=' + filters.join()
+      'https://temtem-api.mael.tech/api/temtems?fields=' +
+        filters.join() +
+        '&expand=types'
     );
   }
 
   getTemtem(temtemNumber) {
     return this.http.get(
-      'https://temtem-api.mael.tech/api/temtems/' + temtemNumber
+      'https://temtem-api.mael.tech/api/temtems/' +
+        temtemNumber +
+        '?expand=traits,types'
+    );
+  }
+
+  calcTypeWeaknesses(attacking: string, defeding: string[]) {
+    const atk = attacking;
+    const def = defeding.join();
+
+    return this.http.get(
+      'https://temtem-api.mael.tech/api/weaknesses/calculate?attacking=' +
+        atk +
+        '&defending=' +
+        def
+    );
+  }
+
+  getTemtemByNames(names: string[]): Observable<any> {
+    const filters = ['name', 'types', 'number', 'icon', 'evolution'];
+    return this.http.get(
+      'https://temtem-api.mael.tech/api/temtems' +
+        '?expand=types&fields=' +
+        filters.join() +
+        '&names=' +
+        names.join()
     );
   }
 }
