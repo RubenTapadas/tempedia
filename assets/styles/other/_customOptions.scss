@@ -4,10 +4,6 @@
   opacity: 0.9;
 }
 
-.tetem-collector div.luma-hunter {
-  margin-right: 5px;
-}
-
 .tetem-collector {
   .mat-checkbox-frame {
     opacity: 0.8;
@@ -37,5 +33,14 @@
   }
   .temtem-listing-item-luma {
     display: inherit;
+  }
+}
+
+.main-container:not(.luma-hunter) {
+  .temtem-listing-item-temtem {
+    display: inherit;
+  }
+  .temtem-listing-item-luma {
+    display: none;
   }
 }

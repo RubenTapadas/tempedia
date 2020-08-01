@@ -11,7 +11,7 @@ body {
   position: relative;
   min-height: 100vh;
   background-color: var(--background-color);
-  overflow-x: hidden;
+
   &:before {
     top: 0;
     left: 0;
@@ -27,4 +27,12 @@ body {
       url("https://sm.ign.com/ign_br/screenshot/default/temtem_8qrk.jpg");
     background-repeat: no-repeat;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
 }
