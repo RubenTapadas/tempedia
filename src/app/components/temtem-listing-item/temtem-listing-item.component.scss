@@ -47,6 +47,7 @@
 .temtem-listing-item-bottom {
   width: var(--temtem-item-size);
   color: var(--font-color-contrast);
+  cursor: pointer;
   padding: 2px 4px;
   opacity: 0.9;
   font-size: 0.8em;

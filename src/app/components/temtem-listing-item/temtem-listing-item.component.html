@@ -1,6 +1,5 @@
 <div
   class="temtem-listing-item-container"
-  (click)="openTemtem(info.number)"
   [ngClass]="{
     'caught-luma': isLuma$ | async,
     'caught-temtem': isCaught$ | async
@@ -9,12 +8,14 @@
   <div>
     <div class="temtem-listing-item">
       <div
+        (click)="openTemtem(info.number)"
         class="temtem-listing-item-temtem"
         [style.backgroundImage]="
           'url(https://temtem-api.mael.tech/' + info.icon + ')'
         "
       ></div>
       <div
+        (click)="openTemtem(info.number)"
         class="temtem-listing-item-luma"
         [style.backgroundImage]="
           'url(https://temtem-api.mael.tech/' + info.lumaIcon + ')'
@@ -24,6 +25,7 @@
         <div class="temtem-listing-item-top-types">
           <div
             *ngFor="let type of info.types"
+            (click)="openTemtem(info.number)"
             [style.backgroundImage]="
               'url(https://temtem-api.mael.tech/' + type.icon + ')'
             "
@@ -45,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="temtem-listing-item-bottom">
+    <div class="temtem-listing-item-bottom" (click)="openTemtem(info.number)">
       {{ "#" + info.number + " " + info.name }}
     </div>
   </div>
