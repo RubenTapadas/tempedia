@@ -7,8 +7,14 @@
 
   --background-color: #f5f5f5;
 
+  --contrast-fade-color: rgba(0, 0, 0, 0.1);
+
+  --card-background-color: rgba(255, 255, 255, 0.6);
+
   --temtem-collector-color: #2196f3;
   --luma-hunter-color: #ff9800;
+  --temtem-collector-faded-color: #90caf9;
+  --luma-hunter-faded-color: #ffb74d;
 
   --background-overlay-gradient: linear-gradient(
     rgba(255, 255, 255, 0.5),
@@ -27,4 +33,16 @@
   --temtem-item-size: 130px;
 
   --website-margin: 120px;
+}
+
+@media only screen and (max-width: 1300px) {
+  :root {
+    --website-margin: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --website-margin: 10px;
+  }
 }
