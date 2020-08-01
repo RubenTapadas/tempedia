@@ -90,8 +90,22 @@
 
 .luma-hunter {
   background-color: var(--luma-hunter-color);
+  mat-checkbox {
+    opacity: 0;
+  }
 }
 
 .temtem-listing-item-top-checkboxes {
   padding: 1px 0;
+}
+
+.luma-icon {
+  top: 3px;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  margin-left: -2px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://gamepedia.cursecdn.com/temtem_gamepedia_en/4/42/Luma_icon.png?version=4a65a92a1166331dd3aaec93d95d8fff");
 }

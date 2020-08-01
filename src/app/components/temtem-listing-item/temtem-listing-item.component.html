@@ -37,6 +37,10 @@
               style="pointer-events: none;"
               [checked]="isLuma$ | async"
             ></mat-checkbox>
+            <div
+              class="luma-icon"
+              [style.opacity]="(isLuma$ | async) ? 1 : 0.3"
+            ></div>
           </div>
           <div class="tetem-collector" (click)="temtemToggle(info.number)">
             <mat-checkbox
