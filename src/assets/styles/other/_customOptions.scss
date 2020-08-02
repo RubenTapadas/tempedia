@@ -44,3 +44,9 @@
     opacity: 0;
   }
 }
+
+.main-container:not(.temtem-collector) {
+  .temtem-listing-item-temtem {
+    opacity: 0.3;
+  }
+}

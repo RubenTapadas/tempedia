@@ -6,9 +6,8 @@
 
 .temtem-options {
   top: 40px;
-  width: 100%;
-  position: sticky;
-  position: -webkit-sticky;
+  width: 300px;
+  position: fixed;
   & > div {
     height: auto;
     border-radius: 4px;
@@ -113,8 +112,22 @@
   position: fixed;
 }
 
+.temtem-options-accordion {
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
 @media only screen and (max-width: 750px) {
   .main-container {
     grid-template-columns: auto;
+  }
+
+  .temtem-options {
+    width: 100%;
+    position: sticky;
+  }
+
+  .temtem-options-accordion {
+    max-height: none;
   }
 }
