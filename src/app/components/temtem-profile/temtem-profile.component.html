@@ -106,6 +106,9 @@
             {{ "#" + evolution.number + " " + evolution.name }}
           </div>
         </div>
+        <div *ngIf="getNextEvoInfo(evolution); let evoInfo">
+          {{ evoInfo.levels }}
+        </div>
       </div>
     </div>
     <div *ngIf="!(evolutions$ | async)">

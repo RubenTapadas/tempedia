@@ -84,4 +84,17 @@ export class TemtemProfileComponent implements OnInit {
         });
     }
   }
+
+  getNextEvoInfo(temtem) {
+    const nextEvo = temtem.evolution.evolutionTree.some(
+      (et) => et.stage === temtem.evolution.stage + 1
+    );
+
+    const currentInfo = temtem.evolution.evolutionTree.find(
+      (et) => et.stage === temtem.evolution.stage
+    );
+    console.log({ currentInfo });
+
+    return nextEvo ? currentInfo : '';
+  }
 }
