@@ -83,7 +83,7 @@
   >
     <div *ngIf="evolutions$ | async">
       <div *ngFor="let evolution of evolutions$ | async">
-        <div class="temtem-listing-item-outer">
+        <div class="temtem-listing-item-outer" (click)="clickTemtem(evolution)">
           <div
             *ngIf="getNextEvoInfo(evolution); let evoInfo"
             class="temtem-listing-item-level"
@@ -99,7 +99,9 @@
               }"
             ></div>
             <span *ngIf="evoInfo.levels">+{{ evoInfo.levels }} Levels</span>
-            <span *ngIf="!evoInfo.levels">Trade</span>
+            <span *ngIf="evoInfo.specialEvolution">{{
+              evoInfo.specialEvolution.name
+            }}</span>
           </div>
           <div class="temtem-listing-item">
             <div
