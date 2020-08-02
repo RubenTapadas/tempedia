@@ -24,6 +24,11 @@ export class TemtemProfileComponent implements OnInit {
 
   evolutions$ = new BehaviorSubject(null);
 
+  iconEvolveFirst =
+    'https://gamepedia.cursecdn.com/temtem_gamepedia_en/thumb/5/55/Priority_Low.png/50px-Priority_Low.png?version=62d81f25829d74eee2196aaed7a31520';
+  iconEvolveSecond =
+    'https://gamepedia.cursecdn.com/temtem_gamepedia_en/thumb/b/b8/Priority_Normal.png/50px-Priority_Normal.png?version=8a4bb5bef79884df8c834a5dfd83a997';
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public temtemService: TemtemService
@@ -93,7 +98,6 @@ export class TemtemProfileComponent implements OnInit {
     const currentInfo = temtem.evolution.evolutionTree.find(
       (et) => et.stage === temtem.evolution.stage
     );
-    console.log({ currentInfo });
 
     return nextEvo ? currentInfo : '';
   }

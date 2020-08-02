@@ -84,6 +84,23 @@
     <div *ngIf="evolutions$ | async">
       <div *ngFor="let evolution of evolutions$ | async">
         <div class="temtem-listing-item-outer">
+          <div
+            *ngIf="getNextEvoInfo(evolution); let evoInfo"
+            class="temtem-listing-item-level"
+          >
+            <div
+              [ngStyle]="{
+                'background-image':
+                  evoInfo.stage === 1
+                    ? 'var(--icon-evolve-1)'
+                    : evoInfo.stage === 2
+                    ? 'var(--icon-evolve-2)'
+                    : ''
+              }"
+            ></div>
+            <span *ngIf="evoInfo.levels">+{{ evoInfo.levels }} Levels</span>
+            <span *ngIf="!evoInfo.levels">Trade</span>
+          </div>
           <div class="temtem-listing-item">
             <div
               class="temtem-listing-item-temtem"
@@ -105,9 +122,6 @@
           <div class="temtem-listing-item-bottom">
             {{ "#" + evolution.number + " " + evolution.name }}
           </div>
-        </div>
-        <div *ngIf="getNextEvoInfo(evolution); let evoInfo">
-          {{ evoInfo.levels }}
         </div>
       </div>
     </div>

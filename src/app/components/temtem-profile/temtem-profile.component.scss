@@ -78,10 +78,9 @@
   }
 }
 
-// listing item
-
 .temtem-listing-item-outer {
   width: var(--temtem-item-size);
+  position: relative;
   box-shadow: var(--box-shadow-level-2);
   border-radius: 3px;
   transition-duration: 0.2s;
@@ -159,5 +158,21 @@
 
   &.evolutions-2 > div {
     width: 500px;
+  }
+}
+
+.temtem-listing-item-level {
+  top: 60px;
+  width: 95px;
+  right: -100px;
+  position: absolute;
+  text-align: center;
+
+  > div {
+    width: 100%;
+    height: 23px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

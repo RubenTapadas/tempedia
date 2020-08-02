@@ -37,9 +37,6 @@
 }
 
 .main-container:not(.luma-hunter) {
-  .temtem-listing-item-temtem {
-    opacity: 1;
-  }
   .temtem-listing-item-luma {
     opacity: 0;
   }
@@ -48,5 +45,11 @@
 .main-container:not(.temtem-collector) {
   .temtem-listing-item-temtem {
     opacity: 0.3;
+  }
+}
+
+.main-container:not(.temtem-collector):not(.luma-hunter) {
+  .temtem-listing-item-temtem {
+    opacity: 1;
   }
 }
