@@ -29,18 +29,18 @@
 
 .temtem-listing-item-container.caught-luma {
   .temtem-listing-item-temtem {
-    display: none;
+    opacity: 0;
   }
   .temtem-listing-item-luma {
-    display: inherit;
+    opacity: 1;
   }
 }
 
 .main-container:not(.luma-hunter) {
   .temtem-listing-item-temtem {
-    display: inherit;
+    opacity: 1;
   }
   .temtem-listing-item-luma {
-    display: none;
+    opacity: 0;
   }
 }
