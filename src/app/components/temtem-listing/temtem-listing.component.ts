@@ -47,7 +47,9 @@ export class TemtemListingComponent implements OnInit {
             (!filters.number ||
               temtem.number.toString().includes(filters.number.toString())) &&
             (!filters.types ||
-              this.arrayShareValue(temtem.types, filters.types))
+              filters.types.every((i) =>
+                temtem.types.map((type) => type.name).includes(i)
+              ))
         );
         this.temtems$.next(temtems as any);
       }
@@ -62,17 +64,6 @@ export class TemtemListingComponent implements OnInit {
     if (profileImage) {
       this.profileImage$.next(profileImage);
     }
-  }
-
-  arrayShareValue(array1: any[], array2: any[]): boolean {
-    let shares = false;
-    array1.forEach((entry) => {
-      if (array2.includes(entry)) {
-        shares = true;
-      }
-    });
-
-    return shares;
   }
 
   changeFilter(fieldName: string, value: string) {
