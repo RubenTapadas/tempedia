@@ -31,7 +31,7 @@ export class TemtemListingComponent implements OnInit {
   activeTypes$ = new BehaviorSubject({});
 
   customOptions$ = new BehaviorSubject({
-    tetemCollector: false,
+    temtemCollector: false,
     lumaHunter: false,
   });
 

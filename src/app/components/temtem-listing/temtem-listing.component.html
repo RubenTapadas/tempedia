@@ -2,7 +2,7 @@
   class="main-container"
   [ngClass]="{
     'luma-hunter': (customOptions$ | async).lumaHunter,
-    'tetem-collector': (customOptions$ | async).tetemCollector
+    'temtem-collector': (customOptions$ | async).temtemCollector
   }"
 >
   <div>
@@ -36,10 +36,10 @@
           <div>
             <div
               class="temtem-collector"
-              (click)="customOptionsToggle('tetemCollector')"
-              [ngClass]="{ active: (customOptions$ | async).tetemCollector }"
+              (click)="customOptionsToggle('temtemCollector')"
+              [ngClass]="{ active: (customOptions$ | async).temtemCollector }"
             >
-              Tetem Collector
+              Temtem Collector
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
   <div
     class="temtem-listing"
     [ngClass]="{
-      'tetem-collector': (customOptions$ | async).tetemCollector,
+      'temtem-collector': (customOptions$ | async).temtemCollector,
       'luma-hunter': (customOptions$ | async).lumaHunter
     }"
   >
